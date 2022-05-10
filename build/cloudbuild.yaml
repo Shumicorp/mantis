@@ -11,6 +11,7 @@ steps:
     'gcr.io/$PROJECT_ID/mantis:latest',
     '.'
     ]
+  dir: 'mantis'
 
 images: [
     'gcr.io/$PROJECT_ID/mantis:$TAG_NAME',
