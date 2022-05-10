@@ -17,6 +17,7 @@ images: [
     'gcr.io/$PROJECT_ID/mantis:$BUILD_ID',
     'gcr.io/$PROJECT_ID/mantis:latest'
     ]
+
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'app-k8s.yaml']
   env:
