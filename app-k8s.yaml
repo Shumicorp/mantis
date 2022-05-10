@@ -16,17 +16,14 @@ spec:
     spec:
       containers:
         - name: app-php
-          image: gcr.io.$PROJECT_ID/mantis:latest
+          image: gcr.io/gcp101091-mrusn/mantis:latest
 
           imagePullPolicy: Always
 
           ports:
             - containerPort: 5432
             - containerPort: 80
-      imagePullSecrets:
-        - name: myregistrykey
-
-
+      
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
