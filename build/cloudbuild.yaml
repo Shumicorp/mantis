@@ -18,5 +18,5 @@ images: [
    'gcr.io/$PROJECT_ID/mantis:$TAG_NAME',
    'gcr.io/$PROJECT_ID/mantis:latest'
   ]
-  dir: 'Demo3'
+  
 timeout: '1600s'
