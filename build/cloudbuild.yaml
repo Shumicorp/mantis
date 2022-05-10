@@ -2,8 +2,6 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone' ,'https://github.com/Shumicorp/Demo3','--branch', '$BRANCH_NAME', '--single-branch']
 
-
-
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'build', 
@@ -13,10 +11,12 @@ steps:
     'gcr.io/$PROJECT_ID/mantis:latest',
     '.'
     ]
-  
+
 images: [
-   'gcr.io/$PROJECT_ID/mantis:$TAG_NAME',
-   'gcr.io/$PROJECT_ID/mantis:latest'
-  ]
-  
+    'gcr.io/$PROJECT_ID/mantis:$TAG_NAME',
+    'gcr.io/$PROJECT_ID/mantis:latest'
+    ]
+
 timeout: '1600s'
+options:
+logging: CLOUD_LOGGING_ONLY
