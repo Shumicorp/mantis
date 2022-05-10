@@ -7,8 +7,8 @@ mkdir -p /usr/share/webapps/ && cd /usr/share/webapps/ && \
     chmod -R 777 /usr/share/webapps/ && \
     ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
 
-
 # start apache
 echo "Starting httpd"
-httpd -DFOREGROUND
+httpd -DFOREGROUND 
 echo "Done httpd"
+

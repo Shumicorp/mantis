@@ -4137,7 +4137,7 @@ $g_plugins_enabled = ON;
 $g_plugin_path = $g_absolute_path . 'plugins' . DIRECTORY_SEPARATOR;
 
 /**
- * Threshold needed to manage plugins
+ * management threshold.
  * @global integer $g_manage_plugin_threshold
  */
 $g_manage_plugin_threshold = ADMINISTRATOR;

@@ -343,11 +343,8 @@ textarea.input-xs, select.input-xs[multiple] {
 
 th > label,
 td > label {
-    font-size: 13px;
-}
-
-th > label {
     font-weight: bold;
+    font-size: 13px;
 }
 
 .scrollable-menu {

@@ -25,7 +25,7 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit https://translatewiki.net  **
+ * ** To improve a translation please visit http://translatewiki.net   **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
@@ -33,7 +33,7 @@
 /** Slovenian (slovenščina)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit https://translatewiki.net
+ * To improve a translation please visit http://translatewiki.net
  *
  * @ingroup Language
  * @file
@@ -213,7 +213,6 @@ $s_update_user_button = 'Posodobi uporabnika';
 $s_default_account_preferences_title = 'Nastavitve računa';
 $s_default_project = 'Privzeti projekt';
 $s_refresh_delay = 'Osvežitev čez';
-$s_minutes = 'minute';
 $s_redirect_delay = 'Preusmeritev čez';
 $s_with_minimum_severity = 'z najmanjšo resnostjo';
 $s_email_on_new = 'Email pri novi zadevi';
@@ -522,7 +521,6 @@ $s_no = 'Ne';
 $s_open_filters = 'Spremeni filtre';
 $s_or_unassigned = 'Ali nedodeljeni';
 $s_ok = 'V redu';
-$s_select_all = 'Izberi vse';
 $s_use_query = 'Uporabi filter';
 $s_delete_query = 'Briši filter';
 $s_query_deleted = 'Filter je izbrisan';

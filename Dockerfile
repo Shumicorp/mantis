@@ -1,7 +1,7 @@
 FROM alpine:3.11
 ENV TIMEZONE America/Santiago
 RUN apk update && apk upgrade
-RUN apk add apache2 \
+RUN apk add apache2 \ 
     apache2-utils \
     curl wget \
     tzdata \
@@ -27,8 +27,7 @@ RUN apk add apache2 \
     php7-mbstring \
     php7-apcu \
     php7-opcache \
-    php7-tokenizer \
-    php7-pgsql
+    php7-tokenizer
 
 RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/bin --filename=composer
@@ -52,21 +51,21 @@ RUN sed -i 's#display_errors = Off#display_errors = On#' /etc/php7/php.ini && \
 
 
 # Configure xdebug
-RUN echo "zend_extension=xdebug.so" > /etc/php7/conf.d/xdebug.ini && \
-    echo -e "\n[XDEBUG]"  >> /etc/php7/conf.d/xdebug.ini && \
-    echo "xdebug.remote_enable=1" >> /etc/php7/conf.d/xdebug.ini && \
-    echo "xdebug.remote_connect_back=1" >> /etc/php7/conf.d/xdebug.ini && \
-    echo "xdebug.idekey=PHPSTORM" >> /etc/php7/conf.d/xdebug.ini && \
+RUN echo "zend_extension=xdebug.so" > /etc/php7/conf.d/xdebug.ini && \ 
+    echo -e "\n[XDEBUG]"  >> /etc/php7/conf.d/xdebug.ini && \ 
+    echo "xdebug.remote_enable=1" >> /etc/php7/conf.d/xdebug.ini && \  
+    echo "xdebug.remote_connect_back=1" >> /etc/php7/conf.d/xdebug.ini && \ 
+    echo "xdebug.idekey=PHPSTORM" >> /etc/php7/conf.d/xdebug.ini && \ 
     echo "xdebug.remote_log=\"/tmp/xdebug.log\"" >> /etc/php7/conf.d/xdebug.ini
 
 COPY entry.sh /entry.sh
 RUN chmod u+x /entry.sh
-RUN rm /var/www/localhost/htdocs/index.html
+
 COPY ./ /var/www/localhost/htdocs/
 
 WORKDIR /var/www/localhost/htdocs/
 
-EXPOSE 80 5432
-
+EXPOSE 80
+EXPOSE 3306
 
 ENTRYPOINT ["/entry.sh"]

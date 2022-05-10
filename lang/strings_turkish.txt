@@ -25,7 +25,7 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit https://translatewiki.net  **
+ * ** To improve a translation please visit http://translatewiki.net   **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
@@ -33,7 +33,7 @@
 /** Turkish (Türkçe)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit https://translatewiki.net
+ * To improve a translation please visit http://translatewiki.net
  *
  * @ingroup Language
  * @file
@@ -67,7 +67,7 @@
  * @author Vito Genovese
  */
 
-$s_directionality = 'ltr';
+$s_directionality = 'soldan sağa';
 $s_actiongroup_menu_copy = 'Kopyala';
 $s_actiongroup_menu_assign = 'Ata';
 $s_actiongroup_menu_resolve = 'Çözümle';
@@ -373,8 +373,8 @@ $s_no_sponsored = 'Üstlenmeniz için atanmış hiç bir sorun bulunamadı.';
 $s_own_sponsored = 'Üstlendiğiniz Sorunlar:';
 $s_issues_handled = 'Üstlenmeniz İçin Size Atanan Sorunlar:';
 $s_no_own_sponsored = 'Hiçbir konuya sponsor olmadınız.';
-$s_sponsor = 'Destekleyen';
-$s_sponsor_verb = 'Destekleyen';
+$s_sponsor = 'Sponsor';
+$s_sponsor_verb = 'Sponsor';
 $s_amount = 'Miktar';
 $s_total_owing = 'Toplam Borç';
 $s_total_paid = 'Toplam Ödeme';

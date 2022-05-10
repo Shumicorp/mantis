@@ -1189,6 +1189,30 @@ function print_project_user_list_option_list2( $p_user_id ) {
 }
 
 /**
+ * list of projects that a user is in
+ * @param integer $p_user_id             An user identifier.
+ * @param boolean $p_include_remove_link Whether to display remove link.
+ * @return void
+ */
+function print_project_user_list( $p_user_id, $p_include_remove_link = true ) {
+	$t_projects = user_get_assigned_projects( $p_user_id );
+
+	foreach( $t_projects as $t_project_id=>$t_project ) {
+		$t_project_name = string_attribute( $t_project['name'] );
+		$t_view_state = $t_project['view_state'];
+		$t_access_level = $t_project['access_level'];
+		$t_access_level = get_enum_element( 'access_levels', $t_access_level );
+		$t_view_state = get_enum_element( 'project_view_state', $t_view_state );
+
+		echo $t_project_name . ' [' . $t_access_level . '] (' . $t_view_state . ')';
+		if( $p_include_remove_link && access_has_project_level( config_get( 'project_user_threshold' ), $t_project_id ) ) {
+			html_button( 'manage_user_proj_delete.php', lang_get( 'remove_link' ), array( 'project_id' => $t_project_id, 'user_id' => $p_user_id ) );
+		}
+		echo '<br />';
+	}
+}
+
+/**
  * List of projects with which the specified field id is linked.
  * For every project, the project name is listed and then the list of custom
  * fields linked in order with their sequence numbers.  The specified field
@@ -1423,6 +1447,7 @@ function print_form_button( $p_action_page, $p_label, array $p_args_to_post = nu
 	# instead of via $p_action_page (GET). Then only add the CSRF form token if
 	# arguments are being sent via the POST method.
 	echo '<form method="post" action="', htmlspecialchars( $p_action_page ), '" class="form-inline inline single-button-form">';
+	echo '<fieldset>';
 	if( $p_security_token !== OFF ) {
 		echo form_security_field( $t_form_name[0], $p_security_token );
 	}
@@ -1435,6 +1460,7 @@ function print_form_button( $p_action_page, $p_label, array $p_args_to_post = nu
 	if( $p_args_to_post ) {
 		print_hidden_inputs( $p_args_to_post );
 	}
+	echo '</fieldset>';
 	echo '</form>';
 }
 
