@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone' ,'https://github.com/Shumicorp/Demo3','--branch', '$BRANCH_NAME', '--single-branch']
+
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: [ 'cp', 'gs://eu.artifacts.mantisbt-307315.appspot.com/config_inc.php', './Demo3/config/config_inc.php']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', 'app.yaml']
+  dir: 'Demo3'
+timeout: '1600s'
