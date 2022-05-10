@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone' ,'https://github.com/Shumicorp/Demo3','--branch', '$BRANCH_NAME', '--single-branch']
+  args: ['clone' ,'https://github.com/Shumicorp/mantis','--branch', '$BRANCH_NAME', '--single-branch']
 
 - name: 'gcr.io/cloud-builders/docker'
   args: [
