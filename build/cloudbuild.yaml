@@ -12,6 +12,11 @@ steps:
     '.'
     ]
   dir: 'mantis'
+images: [
+    'gcr.io/$PROJECT_ID/mantis:$BUILD_ID',
+    'gcr.io/$PROJECT_ID/mantis:latest'
+    ]
+
 
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'app-k8s.yaml']
@@ -19,10 +24,6 @@ steps:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
 
-images: [
-    'gcr.io/$PROJECT_ID/mantis:$BUILD_ID',
-    'gcr.io/$PROJECT_ID/mantis:latest'
-    ]
 
 timeout: '1600s'
 options:
