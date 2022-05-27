@@ -23,8 +23,7 @@ spec:
           ports:
             - containerPort: 5432
             - containerPort: 80
-      imagePullSecrets:
-        - name: myregistrykey
+     
       
 ---
 apiVersion: autoscaling/v2beta1
