@@ -22,9 +22,9 @@ steps:
 
 
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['apply', '-f', 'app-k8s.yaml']
+  args: ['set', 'image', 'deployment','my-app','my-app=europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:$BUILD_ID']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-b'
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
 
 
