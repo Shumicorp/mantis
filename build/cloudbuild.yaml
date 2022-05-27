@@ -12,9 +12,9 @@ steps:
     '.'
     ]
   dir: 'mantis'
-images: [
-    'gcr.io/$PROJECT_ID/mantis:$BUILD_ID',
-    'gcr.io/$PROJECT_ID/mantis:latest']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:latest', 'europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:$BUILD_ID']
     
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'app-k8s.yaml']
