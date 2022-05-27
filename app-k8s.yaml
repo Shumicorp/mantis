@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app-php
-          image: gcr.io/gcp101091-mrusn/mantis:latest
+          image: europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:latest
 
           imagePullPolicy: Always
 
