@@ -61,7 +61,7 @@ RUN echo "zend_extension=xdebug.so" > /etc/php7/conf.d/xdebug.ini && \
 
 COPY entry.sh /entry.sh
 RUN chmod u+x /entry.sh
-#RUN rm /var/www/localhost/htdocs/index.html
+RUN rm /var/www/localhost/htdocs/index.html
 COPY ./ /var/www/localhost/htdocs/
 
 WORKDIR /var/www/localhost/htdocs/
