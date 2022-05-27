@@ -23,6 +23,8 @@ spec:
           ports:
             - containerPort: 5432
             - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
       
 ---
 apiVersion: autoscaling/v2beta1
