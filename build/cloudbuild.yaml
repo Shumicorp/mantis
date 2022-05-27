@@ -14,7 +14,10 @@ steps:
   dir: 'mantis'
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:latest','push', 'europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:$BUILD_ID']
+  args: ['push', 'europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:latest']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','europe-west2-docker.pkg.dev/gcp101091-mrusn/my-repo/mantis:$BUILD_ID']  
     
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'app-k8s.yaml']
